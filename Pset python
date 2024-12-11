@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the function f(x) and its derivative f'(x)
+def f(x):
+    return 4**x + 2*x
+
+def f_prime(x):
+    return 4**x * np.log(4) + 2
+
+# Generate x values
+x_values = np.linspace(-2, 3, 400)
+f_values = f(x_values)
+f_prime_values = f_prime(x_values)
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(x_values, f_values, label='f(x) = 4^x + 2x', color='blue')
+plt.plot(x_values, f_prime_values, label="f'(x) = 4^x ln(4) + 2", color='orange')
+
+# Add labels and title
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Plot of f(x) and its Derivative f\'(x)')
+plt.legend()
+plt.grid()
+
+# Show the plot
+plt.show()
